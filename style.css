@@ -21,29 +21,269 @@
     }
 }
 
+html,
 body {
-  font-family: 'Inter';
-  font-weight: 400;
+    font-family: 'Inter';
+    font-weight: 400;
 
-  background-color: var(--background);
-  color: var(--text)
+    background-color: var(--background);
+    color: var(--text);
+
+    margin: 0;
+    padding: 0;
+
+    width: 100%;
+    height: 100%;
+
+    overflow: hidden;
 }
 
-h1, h2, h3, h4, h5 {
-  font-family: 'Geo';
-  font-weight: 700;
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: 'VT323', monospace;
+    font-weight: 500;
 }
 
-html {font-size: 100%;} /* 16px */
+html {
+    font-size: 100%;
+    /* 16px */
+}
 
-h1 {font-size: 3.366rem; /* 53.92px */}
+h1 {
+    font-size: 3.366rem;
+    /* 53.92px */
+}
 
-h2 {font-size: 2.525rem; /* 40.32px */}
+h2 {
+    font-size: 2.525rem;
+    /* 40.32px */
+}
 
-h3 {font-size: 1.894rem; /* 30.24px */}
+h3 {
+    font-size: 1.894rem;
+    /* 30.24px */
+}
 
-h4 {font-size: 1.421rem; /* 22.72px */}
+h4 {
+    font-size: 1.421rem;
+    /* 22.72px */
+}
 
-h5 {font-size: 1.066rem; /* 17.12px */}
+h5 {
+    font-size: 1.066rem;
+    /* 17.12px */
+}
 
-small {font-size: 0.600rem; /* 9.6px */}
+small {
+    font-size: 0.600rem;
+    /* 9.6px */
+}
+
+.intro,
+.about {
+    position: relative;
+
+    display: flex;
+    flex-direction: row;
+
+    text-align: center;
+
+    justify-content: space-between;
+    align-items: center;
+
+    height: 100%;
+
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.intro #title,
+.about #title {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+}
+
+.intro #chevron {
+    position: absolute;
+    right: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.intro #chevron p {
+    color: gray;
+    font-size: 0.5rem;
+    margin: 0;
+    margin-top: -0.5rem;
+}
+
+.about #chevron {
+    position: absolute;
+    left: 2%;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.about #chevron p {
+    color: gray;
+    font-size: 0.5rem;
+    margin: 0;
+    margin-top: -0.5rem;
+}
+
+.intro {
+    display: flex;
+    animation: slide-in-left 1s forwards;
+}
+
+.about {
+    animation: slide-in-right 1s forwards;
+}
+
+#special {
+    background: -webkit-linear-gradient(right,
+            var(--primary) 20%,
+            var(--secondary) 80%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+#typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    background-color: transparent;
+    position: relative;
+    animation: typing 4s steps(40, end), blink 0.7s step-end infinite;
+    padding-right: 0.5em;
+    /* Add spacing for better visibility */
+}
+
+#typing-effect {
+    overflow: hidden;
+    /* Ensures the content is not revealed until the animation */
+    border-right: .15em solid orange;
+    /* The typwriter cursor */
+    white-space: nowrap;
+    /* Keeps the content on a single line */
+    margin: 0 auto;
+    /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em;
+    /* Adjust as needed */
+    animation:
+        typing 2.5s steps(25, end),
+        blink-caret .75s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: orange;
+    }
+}
+
+@keyframes slide-out-left {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+        height: 100%;
+    }
+
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+        height: 0;
+    }
+}
+
+@keyframes slide-in-left {
+    from {
+        transform: translateX(-100%);
+        opacity: 0;
+        height: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+@keyframes slide-out-right {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+        height: 100%;
+    }
+
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+        height: 0;
+    }
+}
+
+@keyframes slide-in-right {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+        height: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+        height: 100%;
+    }
+}
+
+.intro.scrolled {
+    animation: slide-out-left 1s forwards;
+}
+
+.about.scrolled {
+    display: flex;
+    animation: slide-in-right 1s forwards;
+}

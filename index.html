@@ -1,24 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        
-        <title>CRABRAWL</title>
-        
-        <!-- css -->
-        <link rel="stylesheet" href="style.css">
 
-        <!-- favicon -->
-        <link rel="icon" href="assets/favicon.png" type="image/png">
-    </head>
-    
-    <body>
-        <div id="intro">
-            <img src="assets/crabrawl.png" alt="CRABRAWL Title">
-            <h1>crab</h1>
-            <button id="start-button">Start Game</button>
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CRABRAWL</title>
+
+    <!-- css -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- favicon -->
+    <link rel="icon" href="assets/favicon.png" type="image/png">
+
+    <!-- google icons -->
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body>
+    <!-- google icons styles -->
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings:
+                'FILL' 0,
+                'wght' 400,
+                'GRAD' 0,
+                'opsz' 24;
+            font-size: 48px;
+        }
+    </style>
+
+    <div class="intro">
+        <div id="title">
+            <img src="assets/crabrawl.png" alt="CRABRAWL Title" id="crabrawl">
+            <h1><span id="typing-effect">Welcome to <span id="special">CRABRAWL</span>!</span></h1>
         </div>
-    </body>
+        <div id="chevron" onclick="scrollDown()">
+            <span class="material-symbols-outlined">chevron_right</span>
+            <p>(scroll)</p>
+        </div>
+    </div>
+    <div class="about">
+        <div id="title">
+            <h2>About</h2>
+        </div>
+        <div id="chevron" onclick="scrollUp()">
+            <span class="material-symbols-outlined">chevron_left</span>
+            <p>(scroll)</p>
+        </div>
+    </div>
+
+    <script src="actions.js"></script>
+</body>
+
 </html>
